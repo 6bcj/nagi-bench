@@ -10,7 +10,7 @@ NAGI STUDIO 的 LLM 测评案例集：同一段提示词，不同「模型 × Ha
 
 - **模型（Model）**：权重与推理引擎本身，如 GPT-5.5、Gemini 3.1 Pro、Claude Fable 5。
 - **Harness（运行环境）**：包裹模型的产品/脚手架，如 Codex CLI、Cursor、AntiGravity、Claude 网页版——它决定工具调用、系统提示词、上下文管理与续写策略，对最终产出的影响往往不亚于模型本身。
-- 因此本仓库的测评单位是**组合**：同一个模型在不同 Harness 或不同思考配额下，记为不同条目（例如 GPT-5.5 Pro 与 GPT-5.5 Codex 是同一模型家族的两条记录）。思考配额默认拉满（Max），未来同一组合可以追加新配额版本。
+- 因此本仓库的测评单位是**组合**：同一个模型在不同 Harness 或不同思考配额下，记为不同条目（例如 GPT-5.5 Pro 与跑在 Codex CLI 里的 GPT-5.5（xhigh）是同一模型家族的两条记录）。思考配额默认拉满（Max），未来同一组合可以追加新配额版本。
 
 ## 已测组合 / Registry
 
@@ -18,7 +18,7 @@ NAGI STUDIO 的 LLM 测评案例集：同一段提示词，不同「模型 × Ha
 |---|---|---|---|---|
 | Claude Fable 5 | Anthropic | Claude 网页版 | Max | 02 |
 | GPT-5.5 Pro | OpenAI | ChatGPT 网页版 | Extended Pro | 02 |
-| GPT-5.5 Codex | OpenAI | Codex CLI（无 skill） | xhigh | 02 |
+| GPT-5.5 | OpenAI | Codex CLI（无 skill） | xhigh | 02 |
 | Gemini 3.1 Pro | Google | AntiGravity | High | 03 |
 | Gemini 3.5 Flash | Google | AntiGravity | High | 03 |
 | Grok Build | xAI | Grok Build TUI（本地） | Max | 01 |

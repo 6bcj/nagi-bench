@@ -10,7 +10,7 @@ One-shot LLM eval cases by NAGI STUDIO: same prompt, different model x harness x
 
 - **Model**: the weights and inference engine itself — GPT-5.5, Gemini 3.1 Pro, Claude Fable 5.
 - **Harness**: the product/scaffolding wrapping the model — Codex CLI, Cursor, AntiGravity, the Claude web app. It controls tool calls, system prompts, context management and continuation strategy, and often shapes the outcome as much as the model does.
-- The unit of evaluation here is therefore the **combination**: the same model under a different harness or effort level is a separate entry (GPT-5.5 Pro and GPT-5.5 Codex are two records of the same model family). Effort defaults to max; new effort variants of an existing combination can be added later.
+- The unit of evaluation here is therefore the **combination**: the same model under a different harness or effort level is a separate entry (GPT-5.5 Pro and GPT-5.5 running in Codex CLI at xhigh are two records of the same model family). Effort defaults to max; new effort variants of an existing combination can be added later.
 
 ## Registry
 
@@ -18,7 +18,7 @@ One-shot LLM eval cases by NAGI STUDIO: same prompt, different model x harness x
 |---|---|---|---|---|
 | Claude Fable 5 | Anthropic | Claude Web App | Max | 02 |
 | GPT-5.5 Pro | OpenAI | ChatGPT Web | Extended Pro | 02 |
-| GPT-5.5 Codex | OpenAI | Codex CLI (no skills) | xhigh | 02 |
+| GPT-5.5 | OpenAI | Codex CLI (no skills) | xhigh | 02 |
 | Gemini 3.1 Pro | Google | AntiGravity | High | 03 |
 | Gemini 3.5 Flash | Google | AntiGravity | High | 03 |
 | Grok Build | xAI | Grok Build TUI (local) | Max | 01 |

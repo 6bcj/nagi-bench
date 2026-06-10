@@ -1,5 +1,5 @@
 {
-  "label": "GPT-5.5 Codex",
+  "label": "GPT-5.5",
   "vendor": "OpenAI",
   "harness": "Codex CLI",
   "effort": "xhigh",

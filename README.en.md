@@ -18,6 +18,7 @@ One-shot LLM eval cases by NAGI STUDIO: same prompt, different model x harness x
 |---|---|---|---|---|
 | Claude Fable 5 | Anthropic | Claude Web App | Max | 02 |
 | Claude Fable 5 | Anthropic | Claude Code | Max | 02 |
+| Claude Opus 4.8 | Anthropic | Claude Code | Max | 01 |
 | GPT-5.5 Pro | OpenAI | ChatGPT Web | Extended Pro | 02 |
 | GPT-5.5 | OpenAI | Codex CLI (no skills) | xhigh | 02 |
 | Gemini 3.1 Pro | Google | AntiGravity | High | 02 |
@@ -33,7 +34,7 @@ One-shot LLM eval cases by NAGI STUDIO: same prompt, different model x harness x
 | Kimi K2.6 | Moonshot AI | Kimi Code (local) | Thinking | 02 |
 | MiniMax M3 | MiniMax | MiniMax Code Web | Thinking | 01 |
 
-Pending: Claude Opus 4.8 · Mistral Medium 3.5 · GLM-5.1 · Qwen3.7-Max (PRs welcome)
+Pending: Mistral Medium 3.5 · GLM-5.1 · Qwen3.7-Max (PRs welcome)
 
 > This table is a hand-maintained snapshot; the site's registry section is generated live from `models/*.json` and is authoritative.
 

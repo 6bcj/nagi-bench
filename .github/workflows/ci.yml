@@ -2,19 +2,39 @@ name: CI
 
 on:
   pull_request:
+  push:
+    branches: [main]
 
 permissions:
   contents: read
 
 jobs:
-  build:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
-      - name: Install dependencies
-        run: bun install
-        working-directory: site
-      - name: Type-check and build
-        run: bun run build
-        working-directory: site
+      - name: Validate contribution data
+        run: bun scripts/validate-data.ts
+
+  trigger-site-rebuild:
+    # The site lives in the private nagi-bench-site repo (Cloudflare Pages).
+    # With SITE_DISPATCH_TOKEN set the rebuild is instant; without it the
+    # site's 6-hour cron picks the new data up anyway.
+    if: github.event_name == 'push'
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch data-updated to nagi-bench-site
+        env:
+          TOKEN: ${{ secrets.SITE_DISPATCH_TOKEN }}
+        run: |
+          if [ -z "$TOKEN" ]; then
+            echo "SITE_DISPATCH_TOKEN not set; relying on the site's scheduled rebuild."
+            exit 0
+          fi
+          curl -sf -X POST \
+            -H "Authorization: Bearer $TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/nagi-studio/nagi-bench-site/dispatches \
+            -d '{"event_type":"data-updated"}'

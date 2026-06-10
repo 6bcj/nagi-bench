@@ -49,18 +49,16 @@ Pending: Mistral Medium 3.5 · GLM-5.1 · Qwen3.7-Max (PRs welcome)
 ```
 outputs/<model-id>/<case-id>.<ext>   raw model artifacts (HTML / SVG), filename = case id
 models/<model-id>.json               combination registry: label / vendor / harness / effort / order / run notes
-site/                                showcase app (Vite + React + Tailwind v4 + GSAP, bun)
-site/src/data/cases.json             case definitions (bilingual prompts, maintainer-owned)
-.github/workflows/                   deploy.yml deploys; ci.yml validates data + builds on PRs
+cases.json                           case definitions (bilingual prompts, maintainer-owned)
+scripts/validate-data.ts             data validation (CI runs it on every PR)
 ```
 
-## Development
+> The site and vote-backend source lives in the private `nagi-bench-site` repo, deployed on Cloudflare Pages; this repo is the site's data source.
+
+## Validation
 
 ```bash
-cd site
-bun install
-bun run dev      # syncs outputs/ and serves http://localhost:5173/
-bun run build    # data validation + type-check + build (site/dist)
+bun scripts/validate-data.ts   # the same data validation CI runs
 ```
 
 ## Contributing a run
@@ -72,4 +70,4 @@ Contributions are data-only — no code changes needed:
 
 CI-enforced rules: dash-only lowercase ids matching the `outputs/` folder name; a **required bilingual provenance `note`** per run (which harness, what effort, one-shot or fixed); every declared run must have its artifact; multiple versions of the same combination x case go in an array with distinct `file` names (e.g. `pelican-cycling-2.svg`). Set `contributor` to your GitHub username — the site shows your avatar linked to your profile next to the run. Fill in `harness` and `effort` truthfully for new combinations: the case page renders Harness / Effort metadata chips from these fields and auto-matches brand icons for the model, vendor and harness (via [lobe-icons](https://github.com/lobehub/lobe-icons)) — contributors never touch icons.
 
-PRs get data validation + a build from CI; merges to `main` deploy automatically.
+PRs get data validation from CI; merges to `main` rebuild the site automatically (usually instant, at most 6 hours).

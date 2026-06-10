@@ -49,18 +49,16 @@ NAGI STUDIO 的 LLM 测评案例集：同一段提示词，不同「模型 × Ha
 ```
 outputs/<model-id>/<case-id>.<ext>   模型产出原文件（HTML / SVG），文件名 = 案例 id
 models/<model-id>.json               组合登记：label / vendor / harness / effort / order / 各案例运行备注
-site/                                展示站点（Vite + React + Tailwind v4 + GSAP，bun 驱动）
-site/src/data/cases.json             案例定义：双语标题与提示词（维护者维护）
-.github/workflows/                   deploy.yml 自动部署；ci.yml 对 PR 跑数据校验 + 构建
+cases.json                           案例定义：双语标题与提示词（维护者维护）
+scripts/validate-data.ts             数据校验（CI 对每个 PR 自动执行）
 ```
 
-## 本地开发 / Development
+> 站点与投票后端的源码在私有仓库 `nagi-bench-site` 中，部署于 Cloudflare Pages；本仓库是站点的数据源。
+
+## 本地校验 / Validation
 
 ```bash
-cd site
-bun install
-bun run dev      # 同步 outputs/ 并启动 http://localhost:5173/
-bun run build    # 数据校验 + 类型检查 + 产物构建（输出到 site/dist）
+bun scripts/validate-data.ts   # 与 CI 相同的数据校验
 ```
 
 ## 贡献一个模型产出 / Contributing a run
@@ -97,4 +95,4 @@ bun run build    # 数据校验 + 类型检查 + 产物构建（输出到 site/d
 - `contributor` 填你的 GitHub 用户名，站点会在产出旁展示你的头像并链接到主页；
 - 新组合的 `harness`（运行环境）与 `effort`（思考配额）请如实填写：站点会据此在测评页生成「运行环境 / 思考配额」metadata 徽章，并自动为模型、厂商、Harness 匹配品牌 icon（来自 [lobe-icons](https://github.com/lobehub/lobe-icons)），贡献者无需处理任何图标。
 
-提 PR 后 CI 会跑数据校验 + 构建；合入 `main` 自动部署。
+提 PR 后 CI 自动校验数据；合入 `main` 后站点自动重建（通常即时，最长 6 小时）。

@@ -14,25 +14,22 @@ NAGI STUDIO 的 LLM 测评案例集：同一段提示词，不同「模型 × Ha
 
 ## 已测组合 / Registry
 
-| 模型 | 厂商 | Harness 环境 | 思考配额 | 产出 |
-|---|---|---|---|---|
-| Claude Fable 5 | Anthropic | Claude 网页版 | Max | 02 |
-| Claude Fable 5 | Anthropic | Claude Code | Max | 02 |
-| Claude Opus 4.8 | Anthropic | Claude Code | Max | 02 |
-| GPT-5.5 Pro | OpenAI | ChatGPT 网页版 | Extended Pro | 02 |
-| GPT-5.5 | OpenAI | Codex CLI（无 skill） | xhigh | 02 |
-| Gemini 3.1 Pro | Google | AntiGravity | High | 02 |
-| Gemini 3.1 Pro | Google | Google AI Studio | High | 01 |
-| Gemini 3.5 Flash | Google | AntiGravity | High | 02 |
-| Gemini 3.5 Flash | Google | Google AI Studio | High | 01 |
-| Grok Build | xAI | Grok Build TUI（本地） | Max | 02 |
-| Composer 2.5 | Cursor | Cursor | Max | 01 |
-| DeepSeek-V4-Pro | DeepSeek | Claude Code | Max | 02 |
-| Doubao Seed 2.0 Pro | ByteDance | 豆包网页版 | 超能模式 | 01 |
-| Doubao Seed 2.0 Mini | ByteDance | 豆包网页版 | 快速模式 | 01 |
-| MiMo v2.5 Pro | Xiaomi | Claude Code | Max | 02 |
-| Kimi K2.6 | Moonshot AI | Kimi Code（本地） | Thinking | 02 |
-| MiniMax M3 | MiniMax | MiniMax Code 网页版 | Thinking | 01 |
+| 模型 | 厂商 | 运行环境（Harness）× 思考配额 | 产出 |
+|---|---|---|---|
+| Claude Fable 5 | Anthropic | Claude Web App · Max<br>Claude Code · Max | 04 |
+| Claude Opus 4.8 | Anthropic | Claude Code · Max | 02 |
+| GPT-5.5 Pro | OpenAI | ChatGPT Web · Extended Pro | 02 |
+| GPT-5.5 | OpenAI | Codex CLI · xhigh | 02 |
+| Gemini 3.1 Pro | Google | AntiGravity · High<br>Google AI Studio · High | 03 |
+| Gemini 3.5 Flash | Google | AntiGravity · High<br>Google AI Studio · High | 03 |
+| Grok Build | xAI | Grok Build TUI · Max | 02 |
+| Composer 2.5 | Cursor | Cursor · Max | 01 |
+| DeepSeek-V4-Pro | DeepSeek | Claude Code · Max | 02 |
+| Doubao Seed 2.0 Pro | ByteDance | Doubao Web · Pro Mode | 01 |
+| Doubao Seed 2.0 Mini | ByteDance | Doubao Web · Fast Mode | 01 |
+| MiMo v2.5 Pro | Xiaomi | Claude Code · Max | 02 |
+| Kimi K2.6 | Moonshot AI | Kimi Code · Thinking | 02 |
+| MiniMax M3 | MiniMax | MiniMax Code Web · Thinking | 01 |
 
 待测：Mistral Medium 3.5 · GLM-5.1 · Qwen3.7-Max（欢迎 PR 补充）
 

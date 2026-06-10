@@ -5,6 +5,13 @@
   "harness": "Kimi Code",
   "effort": "Default",
   "runs": {
+    "mythos-craft": {
+      "note": {
+        "zh": "在本地以 Kimi Code（harness）运行 Kimi K2.6 一次生成，本页为未经修改的原始产出。",
+        "en": "Generated in one shot by Kimi K2.6 running locally in Kimi Code; unmodified original output."
+      },
+      "contributor": "Nagi-ovo"
+    },
     "pelican-cycling": {
       "note": {
         "zh": "在本地以 Kimi Code（harness）运行 Kimi K2.6 一次生成。",

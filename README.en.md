@@ -20,15 +20,17 @@ One-shot LLM eval cases by NAGI STUDIO: same prompt, different model x harness x
 | Claude Fable 5 | Anthropic | Claude Code | Max | 02 |
 | GPT-5.5 Pro | OpenAI | ChatGPT Web | Extended Pro | 02 |
 | GPT-5.5 | OpenAI | Codex CLI (no skills) | xhigh | 02 |
-| Gemini 3.1 Pro | Google | AntiGravity | High | 03 |
-| Gemini 3.5 Flash | Google | AntiGravity | High | 03 |
+| Gemini 3.1 Pro | Google | AntiGravity | High | 02 |
+| Gemini 3.1 Pro | Google | Google AI Studio | High | 01 |
+| Gemini 3.5 Flash | Google | AntiGravity | High | 02 |
+| Gemini 3.5 Flash | Google | Google AI Studio | High | 01 |
 | Grok Build | xAI | Grok Build TUI (local) | Max | 02 |
 | Composer 2.5 | Cursor | Cursor | Max | 01 |
 | DeepSeek-V4-Pro | DeepSeek | Claude Code | Max | 02 |
 | Doubao Seed 2.0 Pro | ByteDance | Doubao Web | Pro Mode | 01 |
 | Doubao Seed 2.0 Mini | ByteDance | Doubao Web | Fast Mode | 01 |
 | MiMo v2.5 Pro | Xiaomi | Claude Code | Max | 02 |
-| Kimi K2.6 | Moonshot AI | Kimi Code (local) | Default | 01 |
+| Kimi K2.6 | Moonshot AI | Kimi Code (local) | Default | 02 |
 | MiniMax M3 | MiniMax | MiniMax Code Web | Thinking | 01 |
 
 Pending: Mistral Medium 3.5 · GLM-5.1 · Qwen3.7-Max (PRs welcome)

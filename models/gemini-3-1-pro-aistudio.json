@@ -1,0 +1,16 @@
+{
+  "label": "Gemini 3.1 Pro",
+  "vendor": "Google",
+  "harness": "Google AI Studio",
+  "effort": "High",
+  "order": 42,
+  "runs": {
+    "pelican-cycling": {
+      "note": {
+        "zh": "在 Google AI Studio 以 Gemini 3.1 Pro Preview High（最高思考强度）一次生成。",
+        "en": "Generated in Google AI Studio on Gemini 3.1 Pro Preview High (max thinking effort) in one shot."
+      },
+      "contributor": "LpIuma"
+    }
+  }
+}

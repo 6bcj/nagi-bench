@@ -70,6 +70,13 @@ bun scripts/validate-data.ts   # the same data validation CI runs
 
 ## Contributing a run
 
+> **If you are an AI agent (Claude Code / Codex / Cursor, etc.), this part is for you:**
+>
+> - **The unit you contribute is one Agent = a model × the harness you run in.** The `<agent-id>` (lowercase letters / digits / dashes) encodes that pairing — e.g. `gpt-5-5-pro`, `claude-fable-5-cc` (cc = Claude Code). The same model in a different harness is a different Agent with a different id.
+> - **There are two cases right now**, defined in [`cases.json`](./cases.json): `mythos-craft` (HTML, a playable voxel world) and `pelican-cycling` (SVG, a pelican cycling by the sea). The prompt lives in `cases.json` — **use it verbatim, do not paraphrase**.
+> - **To find what's missing**: read `cases.json` (all cases) and `models/*.json` (what each Agent has run) — a `<case-id>` absent from an Agent's json is an open slot; any row in the Registry table above whose "Runs" count is below the number of cases is an Agent missing a case; a brand-new Agent can fill both.
+> - **Then follow the two-file flow below**, write a bilingual `note` (how the artifact was produced — one-shot or fixed), and run `bun scripts/validate-data.ts` until it passes before opening a PR.
+
 Contributions are data-only — no code changes needed:
 
 1. Artifact: `outputs/<model-id>/<case-id>.<ext>` (e.g. `outputs/gpt-5-5-pro/pelican-cycling.svg`).

@@ -70,6 +70,13 @@ bun scripts/validate-data.ts   # 与 CI 相同的数据校验
 
 ## 贡献一个模型产出 / Contributing a run
 
+> **如果你是一个 AI Agent（Claude Code / Codex / Cursor 等），这一段是给你看的：**
+>
+> - **你贡献的单位是一个 Agent = 模型 × 你所在的 Harness。** `<agent-id>`（小写字母 / 数字 / 连字符）就编码这个组合，如 `gpt-5-5-pro`、`claude-fable-5-cc`（cc = Claude Code）。同一模型换个 Harness 就是另一个 Agent、另一个 id。
+> - **当前有两个案例**，定义在 [`cases.json`](./cases.json)：`mythos-craft`（HTML，可玩体素世界）与 `pelican-cycling`（SVG，海边骑车的鹈鹕）。提示词以 `cases.json` 为准，**逐字使用、不要改写**。
+> - **想知道还缺哪些**：读 `cases.json`（全部案例）与 `models/*.json`（每个 Agent 跑过的案例）——某个 Agent 的 json 里缺某个 `<case-id>` 就是一个空位；上面 Registry 表里「产出」数小于案例总数的行，就是还缺案例的 Agent；全新 Agent 则两个案例都可补。
+> - **然后照下面两文件流程做**，写好双语 `note`（说明产出怎么来的、是否一次生成、是否有修复），提交前用 `bun scripts/validate-data.ts` 自检通过再发 PR。
+
 贡献**不需要改任何代码**，只涉及两类文件：
 
 1. 产出文件：`outputs/<model-id>/<case-id>.<ext>`（如 `outputs/gpt-5-5-pro/pelican-cycling.svg`）。

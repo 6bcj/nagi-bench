@@ -1,0 +1,367 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <!-- Sky gradient -->
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4a90d9"/>
+      <stop offset="35%" stop-color="#7eb8e8"/>
+      <stop offset="70%" stop-color="#b8d9f0"/>
+      <stop offset="100%" stop-color="#f5e6c8"/>
+    </linearGradient>
+
+    <!-- Ocean gradient -->
+    <linearGradient id="oceanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1a6b8a"/>
+      <stop offset="40%" stop-color="#2a8fad"/>
+      <stop offset="100%" stop-color="#3db8c4"/>
+    </linearGradient>
+
+    <!-- Sand gradient -->
+    <linearGradient id="sandGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e8d4a8"/>
+      <stop offset="50%" stop-color="#d4bc82"/>
+      <stop offset="100%" stop-color="#c4a86a"/>
+    </linearGradient>
+
+    <!-- Sun glow -->
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff8dc"/>
+      <stop offset="40%" stop-color="#ffe066"/>
+      <stop offset="100%" stop-color="#ffb347" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Pelican body -->
+    <linearGradient id="pelicanWhite" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#f0ece4"/>
+      <stop offset="100%" stop-color="#d8d0c4"/>
+    </linearGradient>
+
+    <linearGradient id="pelicanWing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2c3e50"/>
+      <stop offset="100%" stop-color="#1a252f"/>
+    </linearGradient>
+
+    <linearGradient id="pouchGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e8a87c"/>
+      <stop offset="100%" stop-color="#c47850"/>
+    </linearGradient>
+
+    <linearGradient id="beakGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f5c842"/>
+      <stop offset="60%" stop-color="#e8a830"/>
+      <stop offset="100%" stop-color="#d49020"/>
+    </linearGradient>
+
+    <!-- Metal bike -->
+    <linearGradient id="metalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8a9aaa"/>
+      <stop offset="50%" stop-color="#5a6a7a"/>
+      <stop offset="100%" stop-color="#3a4a5a"/>
+    </linearGradient>
+
+    <linearGradient id="tireGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a2a2a"/>
+      <stop offset="100%" stop-color="#1a1a1a"/>
+    </linearGradient>
+
+    <!-- Wave pattern -->
+    <pattern id="wavePattern" x="0" y="0" width="120" height="20" patternUnits="userSpaceOnUse">
+      <path d="M0,10 Q30,0 60,10 T120,10" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.25"/>
+      <path d="M0,15 Q30,5 60,15 T120,15" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.15"/>
+    </pattern>
+
+    <!-- Shadow filter -->
+    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="3" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+
+    <filter id="softBlur" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+
+    <!-- Clip for horizon -->
+    <clipPath id="oceanClip">
+      <rect x="0" y="380" width="1200" height="420"/>
+    </clipPath>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1200" height="800" fill="url(#skyGrad)"/>
+
+  <!-- Distant clouds -->
+  <g opacity="0.85">
+    <ellipse cx="180" cy="120" rx="90" ry="35" fill="#ffffff" opacity="0.7"/>
+    <ellipse cx="240" cy="110" rx="60" ry="28" fill="#ffffff" opacity="0.6"/>
+    <ellipse cx="130" cy="130" rx="50" ry="22" fill="#ffffff" opacity="0.5"/>
+
+    <ellipse cx="750" cy="90" rx="110" ry="40" fill="#ffffff" opacity="0.65"/>
+    <ellipse cx="820" cy="80" rx="70" ry="30" fill="#ffffff" opacity="0.55"/>
+    <ellipse cx="690" cy="100" rx="55" ry="25" fill="#ffffff" opacity="0.5"/>
+
+    <ellipse cx="1050" cy="150" rx="80" ry="30" fill="#ffffff" opacity="0.6"/>
+    <ellipse cx="1100" cy="140" rx="50" ry="22" fill="#ffffff" opacity="0.5"/>
+  </g>
+
+  <!-- Sun -->
+  <circle cx="980" cy="130" r="120" fill="url(#sunGlow)"/>
+  <circle cx="980" cy="130" r="55" fill="#ffe566" opacity="0.95"/>
+  <circle cx="980" cy="130" r="48" fill="#fff4a0"/>
+
+  <!-- Distant horizon mountains/islands -->
+  <path d="M0,360 Q200,320 400,350 Q550,330 700,355 Q900,325 1200,345 L1200,400 L0,400 Z" fill="#6a9ab8" opacity="0.4"/>
+
+  <!-- Ocean -->
+  <rect x="0" y="380" width="1200" height="200" fill="url(#oceanGrad)"/>
+  <rect x="0" y="380" width="1200" height="200" fill="url(#wavePattern)"/>
+
+  <!-- Ocean shimmer -->
+  <g clip-path="url(#oceanClip)" opacity="0.3">
+    <ellipse cx="300" cy="420" rx="80" ry="8" fill="#ffffff"/>
+    <ellipse cx="550" cy="440" rx="60" ry="6" fill="#ffffff"/>
+    <ellipse cx="800" cy="410" rx="100" ry="10" fill="#ffffff"/>
+    <ellipse cx="1050" cy="435" rx="70" ry="7" fill="#ffffff"/>
+  </g>
+
+  <!-- Beach / sand -->
+  <path d="M0,520 Q300,500 600,515 Q900,530 1200,505 L1200,800 L0,800 Z" fill="url(#sandGrad)"/>
+
+  <!-- Wet sand reflection -->
+  <path d="M0,520 Q300,510 600,520 Q900,528 1200,515 L1200,560 L0,560 Z" fill="#b8a070" opacity="0.35"/>
+
+  <!-- Beach details: shells, pebbles -->
+  <g opacity="0.6">
+    <ellipse cx="150" cy="620" rx="8" ry="5" fill="#c9a882" transform="rotate(-20 150 620)"/>
+    <ellipse cx="320" cy="680" rx="6" ry="4" fill="#a89070" transform="rotate(15 320 680)"/>
+    <ellipse cx="480" cy="640" rx="7" ry="4" fill="#d4b898"/>
+    <ellipse cx="900" cy="700" rx="9" ry="5" fill="#b8a078" transform="rotate(-10 900 700)"/>
+    <ellipse cx="1050" cy="650" rx="6" ry="3" fill="#c4a888"/>
+    <circle cx="200" cy="720" r="3" fill="#8a7a60"/>
+    <circle cx="550" cy="750" r="4" fill="#7a6a50"/>
+    <circle cx="750" cy="710" r="3" fill="#9a8a70"/>
+  </g>
+
+  <!-- Seaweed on beach -->
+  <path d="M80,560 Q85,540 90,560 Q95,545 100,560" fill="none" stroke="#3a6b4a" stroke-width="2" opacity="0.5"/>
+  <path d="M1100,570 Q1105,550 1110,570 Q1115,555 1120,570" fill="none" stroke="#3a6b4a" stroke-width="2" opacity="0.5"/>
+
+  <!-- Distant seagulls -->
+  <g fill="#ffffff" opacity="0.7">
+    <path d="M420,200 L430,195 L440,200 L430,205 Z" transform="scale(1.2)"/>
+    <path d="M580,170 L588,166 L596,170 L588,174 Z"/>
+    <path d="M650,220 L656,217 L662,220 L656,223 Z" transform="scale(0.8)"/>
+  </g>
+
+  <!-- Bicycle shadow on sand -->
+  <ellipse cx="580" cy="590" rx="140" ry="18" fill="#000" opacity="0.15" filter="url(#softBlur)"/>
+
+  <!-- ===== BICYCLE ===== -->
+  <g id="bicycle" transform="translate(480, 420)" filter="url(#dropShadow)">
+    <!-- Rear wheel -->
+    <g transform="translate(-80, 80)">
+      <circle cx="0" cy="0" r="52" fill="none" stroke="url(#tireGrad)" stroke-width="10"/>
+      <circle cx="0" cy="0" r="48" fill="none" stroke="#444" stroke-width="2"/>
+      <!-- Spokes -->
+      <g stroke="#888" stroke-width="1.5" opacity="0.7">
+        <line x1="0" y1="0" x2="0" y2="-42"/>
+        <line x1="0" y1="0" x2="36" y2="-21"/>
+        <line x1="0" y1="0" x2="36" y2="21"/>
+        <line x1="0" y1="0" x2="0" y2="42"/>
+        <line x1="0" y1="0" x2="-36" y2="21"/>
+        <line x1="0" y1="0" x2="-36" y2="-21"/>
+      </g>
+      <circle cx="0" cy="0" r="6" fill="url(#metalGrad)"/>
+      <!-- Tire tread hint -->
+      <circle cx="0" cy="0" r="52" fill="none" stroke="#333" stroke-width="1" stroke-dasharray="4 8"/>
+    </g>
+
+    <!-- Front wheel -->
+    <g transform="translate(120, 80)">
+      <circle cx="0" cy="0" r="52" fill="none" stroke="url(#tireGrad)" stroke-width="10"/>
+      <circle cx="0" cy="0" r="48" fill="none" stroke="#444" stroke-width="2"/>
+      <g stroke="#888" stroke-width="1.5" opacity="0.7">
+        <line x1="0" y1="0" x2="0" y2="-42"/>
+        <line x1="0" y1="0" x2="36" y2="-21"/>
+        <line x1="0" y1="0" x2="36" y2="21"/>
+        <line x1="0" y1="0" x2="0" y2="42"/>
+        <line x1="0" y1="0" x2="-36" y2="21"/>
+        <line x1="0" y1="0" x2="-36" y2="-21"/>
+      </g>
+      <circle cx="0" cy="0" r="6" fill="url(#metalGrad)"/>
+      <circle cx="0" cy="0" r="52" fill="none" stroke="#333" stroke-width="1" stroke-dasharray="4 8"/>
+    </g>
+
+    <!-- Frame -->
+    <g stroke="url(#metalGrad)" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Main triangle -->
+      <path d="M-80,80 L20,-30 L120,80"/>
+      <line x1="20" y1="-30" x2="20" y2="30"/>
+      <!-- Seat tube to crank -->
+      <line x1="-30" y1="20" x2="20" y2="80"/>
+      <!-- Chain stay -->
+      <line x1="-80" y1="80" x2="20" y2="80"/>
+      <!-- Down tube -->
+      <line x1="20" y1="-30" x2="-50" y2="60"/>
+    </g>
+
+    <!-- Fork -->
+    <line x1="120" y1="80" x2="120" y2="-10" stroke="url(#metalGrad)" stroke-width="4" stroke-linecap="round"/>
+    <line x1="115" y1="-10" x2="125" y2="-10" stroke="url(#metalGrad)" stroke-width="4"/>
+
+    <!-- Handlebars -->
+    <path d="M105,-10 Q100,-25 85,-30" fill="none" stroke="url(#metalGrad)" stroke-width="4" stroke-linecap="round"/>
+    <path d="M135,-10 Q140,-25 155,-30" fill="none" stroke="url(#metalGrad)" stroke-width="4" stroke-linecap="round"/>
+    <rect x="100" y="-35" width="40" height="6" rx="3" fill="#2a3a4a"/>
+
+    <!-- Seat -->
+    <ellipse cx="-35" cy="12" rx="22" ry="8" fill="#8b4513" transform="rotate(-15 -35 12)"/>
+    <rect x="-38" y="8" width="8" height="15" fill="url(#metalGrad)"/>
+
+    <!-- Pedals & crank -->
+    <g transform="translate(20, 80)">
+      <circle cx="0" cy="0" r="14" fill="none" stroke="url(#metalGrad)" stroke-width="3"/>
+      <line x1="-18" y1="0" x2="18" y2="0" stroke="#666" stroke-width="4" stroke-linecap="round"/>
+      <rect x="-28" y="-4" width="12" height="8" rx="2" fill="#444"/>
+      <rect x="16" y="-4" width="12" height="8" rx="2" fill="#444"/>
+    </g>
+
+    <!-- Chain -->
+    <path d="M20,80 Q-20,90 -60,80" fill="none" stroke="#333" stroke-width="2" stroke-dasharray="3 2"/>
+
+    <!-- Basket on front -->
+    <g transform="translate(120, -5)">
+      <path d="M-25,-5 L-25,25 L25,25 L25,-5 Z" fill="none" stroke="#c4a060" stroke-width="3"/>
+      <line x1="-25" y1="5" x2="25" y2="5" stroke="#c4a060" stroke-width="2"/>
+      <line x1="-25" y1="15" x2="25" y2="15" stroke="#c4a060" stroke-width="2"/>
+      <line x1="-15" y1="-5" x2="-15" y2="25" stroke="#c4a060" stroke-width="2"/>
+      <line x1="0" y1="-5" x2="0" y2="25" stroke="#c4a060" stroke-width="2"/>
+      <line x1="15" y1="-5" x2="15" y2="25" stroke="#c4a060" stroke-width="2"/>
+      <!-- Fish in basket -->
+      <ellipse cx="0" cy="15" rx="12" ry="5" fill="#7eb8c8" opacity="0.8"/>
+      <path d="M12,15 L18,12 L18,18 Z" fill="#7eb8c8"/>
+    </g>
+  </g>
+
+  <!-- ===== PELICAN RIDER ===== -->
+  <g id="pelican" transform="translate(500, 280)" filter="url(#dropShadow)">
+    <!-- Tail feathers -->
+    <path d="M-60,80 Q-90,60 -100,90 Q-85,95 -70,85 Q-80,100 -55,90 Z" fill="url(#pelicanWing)" opacity="0.9"/>
+
+    <!-- Left leg on pedal -->
+    <g transform="translate(10, 200)">
+      <!-- Upper leg -->
+      <path d="M0,0 Q-5,30 5,55" fill="none" stroke="#e8a050" stroke-width="8" stroke-linecap="round"/>
+      <!-- Lower leg / tarsus -->
+      <path d="M5,55 L15,85" fill="none" stroke="#d49040" stroke-width="6" stroke-linecap="round"/>
+      <!-- Webbed foot on pedal -->
+      <path d="M15,85 L5,95 L25,95 L20,88 L30,95 L25,88" fill="#e8a050" stroke="#c47830" stroke-width="1"/>
+    </g>
+
+    <!-- Right leg pedaling -->
+    <g transform="translate(40, 200)">
+      <path d="M0,0 Q10,25 20,50" fill="none" stroke="#e8a050" stroke-width="8" stroke-linecap="round"/>
+      <path d="M20,50 L30,75" fill="none" stroke="#d49040" stroke-width="6" stroke-linecap="round"/>
+      <path d="M30,75 L20,88 L40,88 L35,80 L45,88 L40,80" fill="#e8a050" stroke="#c47830" stroke-width="1"/>
+    </g>
+
+    <!-- Body -->
+    <ellipse cx="30" cy="120" rx="55" ry="70" fill="url(#pelicanWhite)"/>
+    <!-- Body shading -->
+    <ellipse cx="20" cy="130" rx="40" ry="55" fill="#d8d0c0" opacity="0.3"/>
+
+    <!-- Wing (folded, mid-flap) -->
+    <path d="M-10,90 Q-50,70 -70,100 Q-60,130 -30,140 Q-5,125 -10,90 Z" fill="url(#pelicanWing)"/>
+    <path d="M-15,95 Q-45,80 -60,105" fill="none" stroke="#1a252f" stroke-width="1" opacity="0.5"/>
+
+    <!-- Right wing slightly raised -->
+    <path d="M50,85 Q90,60 100,95 Q85,120 60,115 Q45,100 50,85 Z" fill="url(#pelicanWing)" opacity="0.85"/>
+
+    <!-- Neck -->
+    <path d="M55,70 Q75,30 90,0" fill="none" stroke="url(#pelicanWhite)" stroke-width="28" stroke-linecap="round"/>
+    <path d="M55,70 Q75,30 90,0" fill="none" stroke="#e8e0d4" stroke-width="20" stroke-linecap="round" opacity="0.5"/>
+
+    <!-- Head -->
+    <ellipse cx="95" cy="-5" rx="28" ry="24" fill="url(#pelicanWhite)"/>
+
+    <!-- Eye -->
+    <circle cx="108" cy="-10" r="8" fill="#ffffff"/>
+    <circle cx="110" cy="-10" r="5" fill="#1a1a2e"/>
+    <circle cx="112" cy="-12" r="2" fill="#ffffff"/>
+
+    <!-- Cheek patch -->
+    <ellipse cx="100" cy="5" rx="12" ry="8" fill="#f0e8d8" opacity="0.6"/>
+
+    <!-- Lower beak / pouch -->
+    <path d="M115,-5 Q160,15 200,5 Q210,20 195,35 Q160,45 120,30 Q110,20 115,-5 Z" fill="url(#pouchGrad)"/>
+    <!-- Pouch wrinkle lines -->
+    <path d="M130,15 Q150,25 175,18" fill="none" stroke="#a06040" stroke-width="1" opacity="0.4"/>
+    <path d="M135,22 Q155,30 180,24" fill="none" stroke="#a06040" stroke-width="1" opacity="0.3"/>
+
+    <!-- Upper beak -->
+    <path d="M115,-12 Q170,-5 210,-8 Q215,-2 200,5 L115,-5 Z" fill="url(#beakGrad)"/>
+    <!-- Beak ridge -->
+    <path d="M120,-10 Q170,-6 205,-7" fill="none" stroke="#c49020" stroke-width="1.5"/>
+    <!-- Nostril -->
+    <ellipse cx="175" cy="-6" rx="3" ry="2" fill="#a07020"/>
+
+    <!-- Crest feathers -->
+    <path d="M85,-20 Q80,-35 90,-40 Q95,-30 88,-22" fill="#2c3e50"/>
+    <path d="M92,-22 Q88,-38 98,-42 Q102,-32 95,-24" fill="#1a252f"/>
+
+    <!-- Wings for balance - wing tips -->
+    <path d="M-70,100 Q-85,85 -95,95" fill="none" stroke="#1a252f" stroke-width="3" stroke-linecap="round"/>
+    <path d="M100,95 Q115,80 120,90" fill="none" stroke="#1a252f" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Tail detail -->
+    <path d="M-55,85 L-65,95 M-50,90 L-60,100 M-45,95 L-55,105" stroke="#1a252f" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Wing feathers detail -->
+    <g stroke="#1a252f" stroke-width="1" opacity="0.4">
+      <line x1="-20" y1="100" x2="-45" y2="95"/>
+      <line x1="-25" y1="110" x2="-50" y2="108"/>
+      <line x1="-30" y1="120" x2="-55" y2="118"/>
+      <line x1="60" y1="100" x2="85" y2="92"/>
+      <line x1="58" y1="108" x2="82" y2="102"/>
+    </g>
+  </g>
+
+  <!-- Pelican's wing shadow on body -->
+  <ellipse cx="530" cy="400" rx="30" ry="15" fill="#000" opacity="0.08"/>
+
+  <!-- Motion lines / wind -->
+  <g stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.4">
+    <line x1="350" y1="350" x2="320" y2="350"/>
+    <line x1="360" y1="370" x2="325" y2="370"/>
+    <line x1="340" y1="390" x2="310" y2="390"/>
+  </g>
+
+  <!-- Salty spray from tires -->
+  <g fill="#ffffff" opacity="0.5">
+    <circle cx="420" cy="560" r="3"/>
+    <circle cx="435" cy="555" r="2"/>
+    <circle cx="410" cy="565" r="2"/>
+    <circle cx="720" cy="558" r="3"/>
+    <circle cx="735" cy="552" r="2"/>
+    <circle cx="745" cy="560" r="2"/>
+  </g>
+
+  <!-- Beach grass tufts -->
+  <g stroke="#5a8a4a" stroke-width="2" fill="none" stroke-linecap="round">
+    <path d="M50,530 Q45,510 50,495"/>
+    <path d="M58,530 Q55,508 60,492"/>
+    <path d="M66,530 Q68,512 64,498"/>
+    <path d="M1100,520 Q1095,500 1100,485"/>
+    <path d="M1108,520 Q1110,502 1106,488"/>
+    <path d="M1116,520 Q1120,505 1114,490"/>
+  </g>
+
+  <!-- Lighthouse in distance -->
+  <g transform="translate(200, 300)" opacity="0.6">
+    <rect x="-8" y="0" width="16" height="60" fill="#e8e0d0"/>
+    <rect x="-10" y="-5" width="20" height="8" fill="#c04040"/>
+    <rect x="-6" y="55" width="12" height="8" fill="#a0a0a0"/>
+    <polygon points="0,-15 -12,-5 12,-5" fill="#c04040"/>
+  </g>
+
+  <!-- Title watermark style - subtle -->
+  <text x="600" y="770" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#8a7a60" opacity="0.5" font-style="italic">A pelican's seaside ride</text>
+</svg>

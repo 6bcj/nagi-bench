@@ -1,0 +1,22 @@
+{
+  "label": "Composer 2.5",
+  "vendor": "Cursor",
+  "harness": "Grok Build TUI",
+  "order": 72,
+  "runs": {
+    "mythos-craft": {
+      "note": {
+        "zh": "在 Grok Build TUI 中以 Composer 2.5 生成;本页为修复版(改 1 行)。问题:WOOD(原木)方块只定义了 top 与 side 两个面、没有 bottom,而图集构建 buildAtlas 会为每个方块依次取 top/side/bottom 三面;取 WOOD 底面时 getFaceImage 读 t.bottom.image,t.bottom 为 undefined 直接抛 TypeError。该调用在 initTextures() 顶层执行,异常令整段初始化中断,'进入世界'按钮的点击监听还没绑定——表现为点击开始按钮毫无反应、进不去世界。修复:getFaceImage 在某面缺失时回退到已有的面(底面回退到顶面,正好是原木年轮端面的正确外观),其余原样。",
+        "en": "Generated with Composer 2.5 in the Grok Build TUI; fixed build (1 line changed). Bug: the WOOD block defines only top and side faces, no bottom, but the atlas builder requests top/side/bottom for every block; fetching WOOD's bottom hit getFaceImage reading t.bottom.image where t.bottom is undefined, throwing a TypeError. That call runs at the top level of initTextures(), so the exception aborted the whole init before the 'enter world' click listener was ever attached — clicking the start button did nothing and you could not enter the world. Fix: getFaceImage now falls back to an existing face when one is missing (bottom falls back to top, which is also the correct ring end-grain for a log); nothing else changed."
+      },
+      "contributor": "Nagi-ovo"
+    },
+    "pelican-cycling": {
+      "note": {
+        "zh": "在 Grok Build TUI 中以 Composer 2.5 生成,本页为未经修改的原始产出。",
+        "en": "Generated with Composer 2.5 in the Grok Build TUI; unmodified original output."
+      },
+      "contributor": "Nagi-ovo"
+    }
+  }
+}

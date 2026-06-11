@@ -2,6 +2,7 @@
   "label": "Composer 2.5",
   "vendor": "Cursor",
   "harness": "Grok Build TUI",
+  "effort": "Default",
   "order": 72,
   "runs": {
     "mythos-craft": {

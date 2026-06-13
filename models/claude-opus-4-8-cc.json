@@ -1,6 +1,9 @@
 {
   "label": "Claude Opus 4.8",
   "vendor": "Anthropic",
+  "harness": "Claude Code",
+  "effort": "Max",
+  "artifactDir": "claude-opus-4-8/claude-code-max",
   "order": 15,
   "runs": {
     "mythos-craft": [
@@ -37,7 +40,5 @@
         "contributor": "OHMFOHS"
       }
     ]
-  },
-  "harness": "Claude Code",
-  "effort": "Max"
+  }
 }

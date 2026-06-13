@@ -1,6 +1,9 @@
 {
   "label": "Qwen3.7-Max",
   "vendor": "Alibaba",
+  "harness": "Qoder",
+  "effort": "Default",
+  "artifactDir": "qwen3-7-max/qoder-default",
   "order": 130,
   "runs": {
     "mythos-craft": {
@@ -17,7 +20,5 @@
       },
       "contributor": "Nagi-ovo"
     }
-  },
-  "harness": "Qoder",
-  "effort": "Default"
+  }
 }

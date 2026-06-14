@@ -1,0 +1,18 @@
+{
+  "label": "GLM-5 Turbo",
+  "vendor": "Zhipu AI",
+  "harness": "ZCode",
+  "effort": "Thinking",
+  "artifactDir": "glm-5-turbo/zcode-thinking",
+  "order": 119,
+  "runs": {
+    "pelican-cycling": {
+      "file": "pelican-bike.svg",
+      "note": {
+        "zh": "在 ZCode 中以 GLM-5 Turbo（Thinking 思考配额）一次生成；本页为未经修改的原始 SVG 产出。",
+        "en": "Generated in one shot by GLM-5 Turbo (Thinking effort) inside ZCode; unmodified original SVG output."
+      },
+      "contributor": "Nagi-ovo"
+    }
+  }
+}

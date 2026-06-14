@@ -1082,8 +1082,8 @@ addEventListener('keydown', e => {
 addEventListener('keyup', e => { keys[e.code] = false; });
 
 /* ------------------------------------------------------------------ Hotbar / block selection */
-const hotbarBlocks = [GRASS, DIRT, STONE, WOOD, PLANK, COBBLE, BRICK, GLASS || CRYSTAL, GLOWSTONE];
-// note: GLASS not defined; use CRYSTAL as "glass-like"
+const hotbarBlocks = [GRASS, DIRT, STONE, WOOD, PLANK, COBBLE, BRICK, CRYSTAL, GLOWSTONE];
+// Use CRYSTAL as the glass-like hotbar block.
 const HOTBAR = [GRASS, DIRT, STONE, WOOD, PLANK, COBBLE, BRICK, CRYSTAL, GLOWSTONE];
 let selectedSlot = 0;
 const hotbarEl = document.getElementById('hotbar');

@@ -1,0 +1,24 @@
+{
+  "label": "Step 3.7 Flash",
+  "vendor": "StepFun",
+  "harness": "Claude Code",
+  "effort": "High",
+  "artifactDir": "step-3-7-flash/claude-code-high",
+  "order": 131,
+  "runs": {
+    "mythos-craft": {
+      "note": {
+        "zh": "在 Claude Code 中以 Step 3.7 Flash（High 思考强度）一次生成。生成时 Write 工具调用失误，模型产出的内容由人工手动写入该 HTML 文件，代码本身未做改动。基于 Three.js 与柏林噪声地形的《我的世界》式体素世界，支持 WASD + 鼠标第一人称操控。",
+        "en": "Generated in one shot by Step 3.7 Flash in Claude Code (High thinking effort). The Write tool call failed during generation, so the model's output was saved into this HTML file by hand; the code itself was not modified. A Minecraft-style voxel world built on Three.js with Perlin-noise terrain and WASD + mouse first-person controls."
+      },
+      "contributor": "Nagi-ovo"
+    },
+    "pelican-cycling": {
+      "note": {
+        "zh": "在 Claude Code 中以 Step 3.7 Flash（High 思考强度）一次生成，未做人工修复。海边骑行的鹈鹕 SVG：蓝天白云、海面、沙滩与海鸥，红色自行车（含辐条与链条），鹈鹕有长喙与喉囊。",
+        "en": "Generated in one shot via Claude Code with Step 3.7 Flash (High thinking effort), no manual fixes. A pelican cycling by the sea in SVG: blue sky, clouds, ocean, beach and seagulls, a red bicycle (spokes and chain), and a pelican with a long beak and gular pouch."
+      },
+      "contributor": "Nagi-ovo"
+    }
+  }
+}

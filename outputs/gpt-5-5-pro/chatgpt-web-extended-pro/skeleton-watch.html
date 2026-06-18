@@ -757,7 +757,7 @@
 
     function createSpiralTube(turns, r0, r1, radius, material, z = 0, phase = 0) {
       const curve = new SpiralCurve(turns, r0, r1, z, phase);
-      const geo = new THREE.TubeGeometry(curve, Math.max(96, turns * 38), radius, 8, false);
+      const geo = new THREE.TubeGeometry(curve, Math.max(96, Math.round(turns * 38)), radius, 8, false);
       const mesh = new THREE.Mesh(geo, material);
       return mesh;
     }

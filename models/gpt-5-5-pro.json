@@ -22,8 +22,8 @@
     },
     "skeleton-watch": {
       "note": {
-        "zh": "在 ChatGPT 网页版以 GPT-5.5 Pro（开启 Extended Pro）一次生成；本页为未经修改的原始产出。",
-        "en": "Generated in one shot in the ChatGPT web app on GPT-5.5 Pro (Extended Pro enabled); unmodified original output."
+        "zh": "在 ChatGPT 网页版以 GPT-5.5 Pro（开启 Extended Pro）一次生成；本页为修复版（仅改 1 行）。问题：发条与游丝用 createSpiralTube 构建（760 行），管线段数写成 Math.max(96, turns * 38)，turns 为 5.8 / 6.4 时算出 220.4 / 243.2 的小数段数。修复前：TubeGeometry 末尾会以该段数作下标取 Frenet 帧 frames.normals[220.4]，得到 undefined 后读取 .x 抛 TypeError，初始化中断，页面卡在「Assembling jeweled movement...」加载遮罩永不消失。原因：模型把管线段数当连续值传入，未取整。改为 Math.round(turns * 38) 后段数为整数，场景正常加载、遮罩按时隐藏。",
+        "en": "Generated in one shot in the ChatGPT web app on GPT-5.5 Pro (Extended Pro enabled); fixed build (1 line changed). Bug: the mainspring and hairspring are built via createSpiralTube (line 760) with the tube segment count written as Math.max(96, turns * 38), so turns of 5.8 / 6.4 yield fractional counts 220.4 / 243.2. Before the fix: TubeGeometry's trailing generateSegment indexes the Frenet-frame arrays with that count (frames.normals[220.4]), gets undefined and reads .x, throwing a TypeError that aborts init and leaves the page stuck on the 'Assembling jeweled movement...' loading overlay forever. Cause: the model passed the tube segment count as a continuous value without rounding. Changing it to Math.round(turns * 38) makes the count an integer, so the scene loads and the overlay hides on schedule."
       },
       "contributor": "Nagi-ovo"
     }

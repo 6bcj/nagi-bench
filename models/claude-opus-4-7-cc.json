@@ -22,8 +22,8 @@
     },
     "skeleton-watch": {
       "note": {
-        "zh": "在 Claude Code 中以 Claude Opus 4.7（Max 思考配额）一次生成；本页为未经修改的原始产出。",
-        "en": "Generated in one shot by Claude Opus 4.7 (Max effort) inside Claude Code; unmodified original output."
+        "zh": "在 Claude Code 中以 Claude Opus 4.7（Max 思考配额）一次生成；本页为未经修改的原始产出。已知 bug（未修复）：点击「Exploded View」分解视图几乎没有反应，零件始终保持组装状态。位置在 animate()（933–934 行）：先 const t = clock.getElapsedTime() 再 const dt = Math.min(clock.getDelta(), 0.05)。THREE.Clock 的 getElapsedTime() 内部已经调用过一次 getDelta() 并把 oldTime 重置为当前时刻，因此紧随其后的 getDelta() 返回的是这两行之间的间隔，几乎为 0，导致每帧 dt≈0。分解动画靠 explodeAmount += (explodeTarget - explodeAmount) * min(1, dt*4) 推进，dt≈0 时几乎不增长（实测点击后 2 秒仅到 0.0008，需数分钟才能展开），所以看起来失效；水晶玻璃位移同理。齿轮转动用的是 t 不受影响，机芯照常运转。",
+        "en": "Generated in one shot by Claude Opus 4.7 (Max effort) inside Claude Code; unmodified original output. Known bug (not fixed): clicking 'Exploded View' does almost nothing — the parts stay assembled. Located in animate() (lines 933-934): const t = clock.getElapsedTime() followed by const dt = Math.min(clock.getDelta(), 0.05). THREE.Clock.getElapsedTime() internally already calls getDelta() and resets oldTime to now, so the getDelta() on the next line returns the gap between those two lines — effectively 0 — making dt≈0 every frame. The explode is driven by explodeAmount += (explodeTarget - explodeAmount) * min(1, dt*4), which barely advances when dt≈0 (measured ~0.0008 two seconds after the click; it would take minutes to open), so it looks broken; the crystal offset fails the same way. The gear rotations use t directly and are unaffected, so the movement keeps running."
       },
       "contributor": "Nagi-ovo"
     }
